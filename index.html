@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeSync | Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ========== SIDEBAR ========== -->
+    <div class="sidebar">
+        <h2>CodeSync</h2>
+        <p class="nav-section">NAVIGATION</p>
+
+        <a href="index.html" class="nav-link active"><i>🏠</i> Dashboard</a>
+        <a href="editor.html" class="nav-link"><i>💻</i> Code Editor</a>
+        <a href="projects.html" class="nav-link"><i>📁</i> Projects</a>
+        <a href="review.html" class="nav-link"><i>🔍</i> Code Review</a>
+        <a href="settings.html" class="nav-link"><i>⚙️</i> Settings</a>
+        <a href="help.html" class="nav-link"><i>❓</i> Help</a>
+
+        <p class="nav-section" style="margin-top:30px;">AI ASSISTANT</p>
+        <div class="card" style="text-align:center; margin-top:10px;">
+            <p style="color:#8b5cf6; font-weight:600;">⚡ AI Ready</p>
+            <p class="page-subtitle">Smart coding assistant available in editor</p>
+        </div>
+    </div>
+
+
+    <!-- ========== MAIN DASHBOARD ========== -->
+    <div class="main">
+
+        <h1 class="page-title">Welcome back, Maheshwari!</h1>
+        <p class="page-subtitle">Ready to build something amazing today?</p>
+
+        <!-- New Project Button -->
+        <button class="btn btn-primary" style="margin-top:20px;"
+                onclick="window.location.href='editor.html'">
+            + New Project
+        </button>
+
+        <!-- Stats Cards -->
+        <div class="stats-grid" style="margin-top:30px;">
+            <div class="stats-card">
+                <h3>My Projects</h3>
+                <p style="font-size:32px; margin-top:10px;">2</p>
+                <p class="page-subtitle">2 active</p>
+            </div>
+
+            <div class="stats-card">
+                <h3>Collaborations</h3>
+                <p style="font-size:32px; margin-top:10px;">6</p>
+                <p class="page-subtitle">Cross-team work</p>
+            </div>
+
+            <div class="stats-card">
+                <h3>Messages Today</h3>
+                <p style="font-size:32px; margin-top:10px;">0</p>
+                <p class="page-subtitle">Team communication</p>
+            </div>
+
+            <div class="stats-card">
+                <h3>AI Assists</h3>
+                <p style="font-size:32px; margin-top:10px;">47</p>
+                <p class="page-subtitle">This week</p>
+            </div>
+        </div>
+
+        <!-- Recent Projects -->
+        <div class="card" style="margin-top:40px;">
+            <h2 style="margin-bottom:15px;">⟨ Recent Projects</h2>
+
+            <!-- Sample Project Row -->
+            <div class="stats-card" style="margin-bottom:15px;">
+                <h3>Sample Project</h3>
+                <p class="page-subtitle">No description</p>
+                <p class="page-subtitle">Nov 11, 2025 — 1 file</p>
+            </div>
+
+            <div class="stats-card">
+                <h3>Sample</h3>
+                <p class="page-subtitle">Intro</p>
+                <p class="page-subtitle">Sep 16, 2025 — 1 file</p>
+            </div>
+        </div>
+
+        <!-- Activity Feed -->
+        <div class="card" style="margin-top:40px;">
+            <h2 style="margin-bottom:15px;">💬 Activity Feed</h2>
+
+            <div class="stats-card" style="margin-bottom:15px;">
+                <strong>Maheshwari Tirth</strong>
+                <p class="page-subtitle">hello</p>
+                <p class="page-subtitle">Sep 16, 7:19 AM</p>
+            </div>
+
+            <div class="stats-card">
+                <strong>Maheshwari Tirth</strong>
+                <p class="page-subtitle">hello</p>
+                <p class="page-subtitle">Sep 14, 8:46 AM</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

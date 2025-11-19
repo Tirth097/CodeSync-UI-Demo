@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeSync | Help Center</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ========== SIDEBAR ========== -->
+    <div class="sidebar">
+        <h2>CodeSync</h2>
+
+        <p class="nav-section">NAVIGATION</p>
+
+        <a href="index.html" class="nav-link"><i>🏠</i> Dashboard</a>
+        <a href="editor.html" class="nav-link"><i>💻</i> Code Editor</a>
+        <a href="projects.html" class="nav-link"><i>📁</i> Projects</a>
+        <a href="review.html" class="nav-link"><i>🔍</i> Code Review</a>
+        <a href="settings.html" class="nav-link"><i>⚙️</i> Settings</a>
+        <a href="help.html" class="nav-link active"><i>❓</i> Help</a>
+
+        <p class="nav-section" style="margin-top:30px;">AI ASSISTANT</p>
+        <div class="card" style="text-align:center; margin-top:10px;">
+            <p style="color:#8b5cf6; font-weight:600;">⚡ AI Ready</p>
+            <p class="page-subtitle">Smart coding assistant available in editor</p>
+        </div>
+    </div>
+
+
+    <!-- ========== MAIN HELP PAGE ========== -->
+    <div class="main">
+
+        <h1 class="page-title">Help Center</h1>
+        <p class="page-subtitle">Search the knowledge base or browse frequently asked questions.</p>
+
+        <!-- Search Bar -->
+        <div class="card" style="margin-top:30px; padding:25px;">
+            <input 
+                type="text"
+                id="searchHelp"
+                class="input-field"
+                placeholder="Search for help topics..."
+                onkeyup="searchFAQ()"
+            >
+        </div>
+
+        <!-- Help Categories -->
+        <div class="card" style="margin-top:30px;">
+            <h2 style="margin-bottom:20px;">Features Overview</h2>
+
+            <div class="help-grid">
+
+                <div class="help-box">
+                    <h3>💻 Code Editor</h3>
+                    <p class="page-subtitle">Write, edit and organize your code in one place.</p>
+                </div>
+
+                <div class="help-box">
+                    <h3>👥 Team Collaboration</h3>
+                    <p class="page-subtitle">Invite collaborators and work in real-time.</p>
+                </div>
+
+                <div class="help-box">
+                    <h3>🔀 Version Control</h3>
+                    <p class="page-subtitle">Commit changes and review pull-request-like proposals.</p>
+                </div>
+
+                <div class="help-box">
+                    <h3>⚡ AI Assistant</h3>
+                    <p class="page-subtitle">Get coding help, explanations, and debugging tips.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- FAQ SECTION -->
+        <div class="card" style="margin-top:40px;">
+            <h2 style="margin-bottom:20px;">Frequently Asked Questions</h2>
+
+            <div id="faqContainer">
+
+                <!-- FAQ ITEM -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(1)">
+                        <span>How do I create a new project?</span>
+                        <span id="icon1">+</span>
+                    </div>
+                    <div class="faq-answer" id="answer1">
+                        Click on “New Project” from the dashboard or editor, choose the language, and enter the details.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(2)">
+                        <span>How do I share a project?</span>
+                        <span id="icon2">+</span>
+                    </div>
+                    <div class="faq-answer" id="answer2">
+                        Go to the Projects page → click the share icon → share ID + password or invite via email.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(3)">
+                        <span>What is the commit/review system?</span>
+                        <span id="icon3">+</span>
+                    </div>
+                    <div class="faq-answer" id="answer3">
+                        Owners commit directly. Collaborators propose changes. Owners approve/reject in Code Review page.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(4)">
+                        <span>How does the AI assistant work?</span>
+                        <span id="icon4">+</span>
+                    </div>
+                    <div class="faq-answer" id="answer4">
+                        Click the AI icon in the editor panel, describe your issue, and receive suggestions or fixes.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(5)">
+                        <span>Is my code secure?</span>
+                        <span id="icon5">+</span>
+                    </div>
+                    <div class="faq-answer" id="answer5">
+                        Yes — projects are private by default and all activities are logged for security.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========== INLINE JS FOR FAQs ========== -->
+    <script>
+        function toggleFAQ(id) {
+            const ans = document.getElementById("answer" + id);
+            const icon = document.getElementById("icon" + id);
+
+            if (ans.style.display === "block") {
+                ans.style.display = "none";
+                icon.innerText = "+";
+            } else {
+                ans.style.display = "block";
+                icon.innerText = "-";
+            }
+        }
+
+        function searchFAQ() {
+            const query = document.getElementById("searchHelp").value.toLowerCase();
+            const items = document.querySelectorAll(".faq-item");
+
+            items.forEach(item => {
+                const text = item.innerText.toLowerCase();
+                item.style.display = text.includes(query) ? "block" : "none";
+            });
+        }
+    </script>
+
+
+
+    <!-- ========== INLINE CSS FOR HELP PAGE ========== -->
+    <style>
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .help-box {
+            background: #1e293b;
+            border: 1px solid #334155;
+            padding: 18px;
+            border-radius: 12px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #334155;
+            padding: 10px 0;
+        }
+
+        .faq-question {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 10px;
+            color: #94a3b8;
+            line-height: 1.4;
+        }
+    </style>
+
+</body>
+</html>

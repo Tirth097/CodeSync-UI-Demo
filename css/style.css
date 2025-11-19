@@ -1,0 +1,158 @@
+/* --------------------
+   GLOBAL COLOR PALETTE
+-----------------------*/
+:root {
+    --bg-dark: #0f172a;
+    --bg-darker: #0b1220;
+    --bg-card: #1e293b;
+    --bg-card-light: #273447;
+    --text-white: #ffffff;
+    --text-gray: #94a3b8;
+    --accent-blue: #3b82f6;
+    --accent-purple: #8b5cf6;
+    --accent-green: #10b981;
+    --accent-red: #ef4444;
+    --accent-yellow: #facc15;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text-white);
+    display: flex;
+}
+
+/* --------------------
+   SIDEBAR
+-----------------------*/
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: var(--bg-darker);
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #1e2533;
+    position: fixed;
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.nav-section {
+    margin-top: 20px;
+    color: var(--text-gray);
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    margin-top: 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-white);
+    transition: 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: #1e293b;
+}
+
+.nav-link i {
+    margin-right: 10px;
+}
+
+/* --------------------
+   MAIN CONTENT WRAPPER
+-----------------------*/
+.main {
+    margin-left: 250px;
+    padding: 30px;
+    width: calc(100% - 250px);
+}
+
+/* Page Title */
+.page-title {
+    font-size: 36px;
+    font-weight: 700;
+    background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.page-subtitle {
+    color: var(--text-gray);
+    margin-top: 8px;
+}
+
+/* --------------------
+   CARDS
+-----------------------*/
+.card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stats-card {
+    background: var(--bg-card-light);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* --------------------
+   BUTTONS
+-----------------------*/
+.btn {
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+/* Lists, grids, etc will be added per page */
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #1e293b;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}

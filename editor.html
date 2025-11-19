@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeSync | Create Project</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ========== SIDEBAR ========== -->
+    <div class="sidebar">
+        <h2>CodeSync</h2>
+        <p class="nav-section">NAVIGATION</p>
+
+        <a href="index.html" class="nav-link"><i>🏠</i> Dashboard</a>
+        <a href="editor.html" class="nav-link active"><i>💻</i> Code Editor</a>
+        <a href="projects.html" class="nav-link"><i>📁</i> Projects</a>
+        <a href="review.html" class="nav-link"><i>🔍</i> Code Review</a>
+        <a href="settings.html" class="nav-link"><i>⚙️</i> Settings</a>
+        <a href="help.html" class="nav-link"><i>❓</i> Help</a>
+
+        <p class="nav-section" style="margin-top:30px;">AI ASSISTANT</p>
+        <div class="card" style="text-align:center; margin-top:10px;">
+            <p style="color:#8b5cf6; font-weight:600;">⚡ AI Ready</p>
+            <p class="page-subtitle">Smart coding assistant available in editor</p>
+        </div>
+    </div>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <div class="main">
+
+        <!-- Page Header -->
+        <h1 class="page-title">Create a New Project</h1>
+
+        <!-- Form Container -->
+        <div class="card" style="width:600px; margin-top:40px;">
+
+            <!-- Project Name -->
+            <label>Project Name</label>
+            <input type="text" class="input-field" placeholder="e.g., My Awesome App" id="projectName">
+
+            <!-- Description -->
+            <label style="margin-top:15px;">Description</label>
+            <textarea class="input-area" placeholder="A short description of your project" id="projectDesc"></textarea>
+
+            <!-- Two-column row -->
+            <div style="display:flex; gap:20px; margin-top:15px;">
+
+                <!-- Primary Language -->
+                <div style="flex:1;">
+                    <label>Primary Language</label>
+                    <select class="input-field" id="language">
+                        <option>Select a language</option>
+                        <option>JavaScript</option>
+                        <option>Python</option>
+                        <option>Java</option>
+                        <option>C++</option>
+                        <option>HTML</option>
+                        <option>CSS</option>
+                        <option>React</option>
+                    </select>
+                </div>
+
+                <!-- Access Password -->
+                <div style="flex:1;">
+                    <label>Access Password (Optional)</label>
+                    <input type="password" class="input-field" placeholder="Leave blank for private" id="password">
+                </div>
+            </div>
+
+            <!-- Create Button -->
+            <button class="btn btn-primary" style="width:100%; margin-top:25px;" onclick="createProject()">
+                + Create Project
+            </button>
+        </div>
+
+    </div>
+
+
+
+    <!-- ========== INLINE STYLES FOR INPUTS ========== -->
+    <style>
+        .input-field {
+            width: 100%;
+            margin-top: 8px;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            background: #1e293b;
+            color: white;
+        }
+
+        .input-area {
+            width: 100%;
+            height: 110px;
+            margin-top: 8px;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            background: #1e293b;
+            color: white;
+            resize: none;
+        }
+
+        .input-field:focus,
+        .input-area:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+    </style>
+
+
+    <!-- ========== BASIC JS FOR DEMO FUNCTIONALITY ========== -->
+    <script>
+        function createProject() {
+            const name = document.getElementById("projectName").value;
+
+            if (!name.trim()) {
+                alert("Project name is required.");
+                return;
+            }
+
+            alert("Project Created Successfully! (Demo Only)");
+            window.location.href = "projects.html";
+        }
+    </script>
+
+</body>
+</html>

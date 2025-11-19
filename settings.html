@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeSync | Settings</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ========== SIDEBAR ========== -->
+    <div class="sidebar">
+        <h2>CodeSync</h2>
+
+        <p class="nav-section">NAVIGATION</p>
+
+        <a href="index.html" class="nav-link"><i>🏠</i> Dashboard</a>
+        <a href="editor.html" class="nav-link"><i>💻</i> Code Editor</a>
+        <a href="projects.html" class="nav-link"><i>📁</i> Projects</a>
+        <a href="review.html" class="nav-link"><i>🔍</i> Code Review</a>
+        <a href="settings.html" class="nav-link active"><i>⚙️</i> Settings</a>
+        <a href="help.html" class="nav-link"><i>❓</i> Help</a>
+
+        <p class="nav-section" style="margin-top:30px;">AI ASSISTANT</p>
+        <div class="card" style="text-align:center; margin-top:10px;">
+            <p style="color:#8b5cf6; font-weight:600;">⚡ AI Ready</p>
+            <p class="page-subtitle">Smart coding assistant available in editor</p>
+        </div>
+    </div>
+
+
+    <!-- ========== MAIN SETTINGS PAGE ========== -->
+    <div class="main">
+
+        <h1 class="page-title">Settings</h1>
+        <p class="page-subtitle">Manage your profile, account, and recent activity.</p>
+
+        <!-- SETTINGS CARD -->
+        <div class="card" style="margin-top:40px; max-width:700px;">
+
+            <h2 style="margin-bottom:20px;">Profile Information</h2>
+
+            <!-- Full Name -->
+            <label>Full Name</label>
+            <input class="input-field" type="text" placeholder="Enter your name" id="fullName" value="Maheshwari">
+
+            <!-- Email -->
+            <label style="margin-top:15px;">Email</label>
+            <input class="input-field" type="text" value="maheshwari@example.com" disabled>
+
+            <!-- Bio -->
+            <label style="margin-top:15px;">Bio</label>
+            <textarea class="input-area" placeholder="Write something about yourself..." id="bio">Coding enthusiast exploring new ideas!</textarea>
+
+            <!-- Save Button -->
+            <button class="btn btn-primary" style="margin-top:25px; width:100%;" onclick="saveProfile()">
+                Save Changes
+            </button>
+        </div>
+
+
+        <!-- ACTIVITY LOG -->
+        <div class="card" style="margin-top:40px; max-width:700px;">
+            <h2 style="margin-bottom:20px;">Recent Activity</h2>
+
+            <div class="activity-item">
+                <p><strong>Login activity</strong></p>
+                <p class="page-subtitle">IP: 103.92.21.10 • 2 hrs ago</p>
+            </div>
+
+            <hr style="border-color:#334155; margin:15px 0;">
+
+            <div class="activity-item">
+                <p><strong>Edited Profile</strong></p>
+                <p class="page-subtitle">Updated bio • Yesterday</p>
+            </div>
+
+            <hr style="border-color:#334155; margin:15px 0;">
+
+            <div class="activity-item">
+                <p><strong>Created Project</strong></p>
+                <p class="page-subtitle">“Sample Project” • 3 days ago</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========== INLINE JS (DEMO-ONLY) ========== -->
+    <script>
+        function saveProfile() {
+            alert("Profile updated successfully! (Demo Only)");
+        }
+    </script>
+
+
+    <!-- INLINE CSS FOR SETTINGS -->
+    <style>
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            color: white;
+            margin-top: 8px;
+        }
+
+        .input-area {
+            width: 100%;
+            height: 110px;
+            margin-top: 8px;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            background: #1e293b;
+            color: white;
+            resize: none;
+        }
+
+        .input-field:focus, .input-area:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        .activity-item p {
+            margin-bottom: 5px;
+        }
+    </style>
+
+</body>
+</html>

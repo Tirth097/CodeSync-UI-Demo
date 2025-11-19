@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeSync | Code Review</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ========== SIDEBAR ========== -->
+    <div class="sidebar">
+        <h2>CodeSync</h2>
+        <p class="nav-section">NAVIGATION</p>
+
+        <a href="index.html" class="nav-link"><i>🏠</i> Dashboard</a>
+        <a href="editor.html" class="nav-link"><i>💻</i> Code Editor</a>
+        <a href="projects.html" class="nav-link"><i>📁</i> Projects</a>
+        <a href="review.html" class="nav-link active"><i>🔍</i> Code Review</a>
+        <a href="settings.html" class="nav-link"><i>⚙️</i> Settings</a>
+        <a href="help.html" class="nav-link"><i>❓</i> Help</a>
+
+        <p class="nav-section" style="margin-top:30px;">AI ASSISTANT</p>
+        <div class="card" style="text-align:center; margin-top:10px;">
+            <p style="color:#8b5cf6; font-weight:600;">⚡ AI Ready</p>
+            <p class="page-subtitle">Smart coding assistant available in editor</p>
+        </div>
+    </div>
+
+
+    <!-- ========== MAIN AREA ========== -->
+    <div class="main">
+
+        <h1 class="page-title">Code Review</h1>
+        <p class="page-subtitle">Review and approve changes proposed by your team.</p>
+
+        <!-- If no commits -->
+        <div id="emptyBox" class="card" style="margin-top:30px; display:none;">
+            <div style="text-align:center; padding:30px;">
+                <h3 style="margin-bottom:10px;">All Caught Up!</h3>
+                <p class="page-subtitle">There are no pending code reviews.</p>
+            </div>
+        </div>
+
+        <!-- Commits Container -->
+        <div id="commitContainer" class="review-container">
+
+            <!-- PROJECT GROUP -->
+            <div class="review-project-card">
+                <h2 class="review-project-title">Sample Project</h2>
+
+                <!-- COMMIT PREVIEW -->
+                <div class="commit-card">
+                    <h3 class="commit-title">main.cpp</h3>
+
+                    <p class="tag">Proposed Changes:</p>
+                    <pre class="code-block">cout &lt;&lt; "Hello, World!";</pre>
+
+                    <p class="tag">Original Code:</p>
+                    <pre class="code-block">cout &lt;&lt; "Hello";</pre>
+
+                    <div style="display:flex; gap:10px; margin-top:10px;">
+                        <button class="btn btn-success" onclick="approve(this)">Approve</button>
+                        <button class="btn btn-danger" onclick="reject(this)">Reject</button>
+                    </div>
+                </div>
+
+                <!-- Another commit example -->
+                <div class="commit-card">
+                    <h3 class="commit-title">math.cpp</h3>
+
+                    <p class="tag">Proposed Changes:</p>
+                    <pre class="code-block">int sum(int a, int b) { return a+b; }</pre>
+
+                    <p class="tag">Original Code:</p>
+                    <pre class="code-block">int sum(int a, int b) { return a-b; }</pre>
+
+                    <div style="display:flex; gap:10px; margin-top:10px;">
+                        <button class="btn btn-success" onclick="approve(this)">Approve</button>
+                        <button class="btn btn-danger" onclick="reject(this)">Reject</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========== JS HANDLERS ========== -->
+    <script>
+        function approve(btn) {
+            btn.closest(".commit-card").remove();
+            checkEmpty();
+            alert("Commit approved (Demo only)");
+        }
+
+        function reject(btn) {
+            btn.closest(".commit-card").remove();
+            checkEmpty();
+            alert("Commit rejected (Demo only)");
+        }
+
+        function checkEmpty() {
+            const commits = document.querySelectorAll(".commit-card").length;
+            if (commits === 0) {
+                document.getElementById("commitContainer").style.display = "none";
+                document.getElementById("emptyBox").style.display = "block";
+            }
+        }
+    </script>
+
+
+
+
+    <!-- INLINE STYLES FOR REVIEW PAGE -->
+    <style>
+        .review-container {
+            margin-top: 40px;
+        }
+
+        .review-project-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .review-project-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .commit-card {
+            border: 1px solid #334155;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            background: #273447;
+        }
+
+        .commit-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            color: #94a3b8;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .code-block {
+            background: #0f172a;
+            padding: 12px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid #1e2533;
+            color: #f8fafc;
+        }
+
+        .btn-success {
+            background: #10b981;
+        }
+
+        .btn-danger {
+            background: #ef4444;
+        }
+    </style>
+
+</body>
+</html>
